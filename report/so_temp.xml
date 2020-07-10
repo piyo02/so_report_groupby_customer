@@ -21,12 +21,14 @@
                 <br/>
                 <t t-set="total_sum" t-value="0"/>
                 <t t-foreach="data.keys()" t-as="customer">
-                    <center style="margin-bottom: 10px;">
-                        <b>
-                            <span>Pelanggan :</span>
-                            <span t-esc="customer"/>
-                        </b>
-                    </center>
+                    <t t-if="data[customer]">
+                        <center style="margin-bottom: 10px;">
+                            <b>
+                                <span>Pelanggan :</span>
+                                <span t-esc="customer"/>
+                            </b>
+                        </center>
+                    </t>
                     <t t-foreach="data[customer]" t-as="so">
                         <table class="table table-condensed table-striped">
                             <tbody>
