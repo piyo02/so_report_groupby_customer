@@ -23,6 +23,7 @@ class SaleReportCustomer(models.TransientModel):
                 ('date_order', '<=', self.end_date),
                 ('date_order', '>=', self.start_date),
                 ('state', '=', 'sale'),
+                ('invoice_status', '=', 'invoiced'),
                 ('partner_id.name', '=', partner.name)
             ],
             order="date_order asc")
